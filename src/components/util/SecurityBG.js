@@ -36,5 +36,6 @@ export default class SecurityBG extends React.Component {
 SecurityBG.propTypes = {
   className: PropTypes.string,
   port: PropTypes.object.isRequired,
-  children: PropTypes.node.isRequired
+  children: PropTypes.node.isRequired,
+  dark: PropTypes.node.bool,
 };

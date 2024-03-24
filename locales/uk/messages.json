@@ -555,6 +555,10 @@
         "message": "Так",
         "description": "Yes form button."
     },
+    "general_dark_mode": {
+      "description": "Label for checkbox to enable dark mode.",
+      "message": "Enable dark mode"
+    },
     "general_default_key_always": {
         "message": "Завжди додавати мій основний ключ до списку отримувачів. (Це дозволяє вам розшифровувати надіслані листи)",
         "description": "Label for default private key option."

@@ -30,6 +30,7 @@ export default class AppController extends sub.SubController {
       this.mainType = 'app';
       this.id = getHash();
     }
+
     // register event handlers
     this.on('get-prefs', () => prefs.prefs);
     this.on('set-prefs', this.updatePreferences);

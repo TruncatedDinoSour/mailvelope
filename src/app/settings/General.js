@@ -11,6 +11,7 @@ import Trans from '../../components/util/Trans';
 l10n.register([
   'form_cancel',
   'form_save',
+  'general_dark_mode',
   'general_default_key_always',
   'general_default_key_auto_sign',
   'general_gnupg_check_availability',
@@ -33,7 +34,8 @@ export default class General extends React.Component {
       auto_sign_msg: false,
       prefer_gnupg: false,
       modified: false,
-      nativeMessaging: true
+      nativeMessaging: true,
+      dark_mode: false,
     };
     this.handleCheck = this.handleCheck.bind(this);
     this.handleSave = this.handleSave.bind(this);
@@ -51,6 +53,7 @@ export default class General extends React.Component {
       auto_add_primary: general.auto_add_primary,
       auto_sign_msg: general.auto_sign_msg,
       prefer_gnupg: general.prefer_gnupg,
+      dark_mode: general.dark_mode,
       modified: false
     });
   }
@@ -64,7 +67,8 @@ export default class General extends React.Component {
       general: {
         auto_add_primary: this.state.auto_add_primary,
         auto_sign_msg: this.state.auto_sign_msg,
-        prefer_gnupg: this.state.prefer_gnupg
+        prefer_gnupg: this.state.prefer_gnupg,
+        dark_mode: this.state.dark_mode,
       }
     };
     await port.send('set-prefs', {prefs: update});
@@ -97,6 +101,10 @@ export default class General extends React.Component {
             <div className="custom-control custom-checkbox">
               <input className="custom-control-input" type="checkbox" id="auto_sign_msg" name="auto_sign_msg" checked={this.state.auto_sign_msg} onChange={this.handleCheck} />
               <label className="custom-control-label" htmlFor="auto_sign_msg"><span>{l10n.map.general_default_key_auto_sign}</span></label>
+            </div>
+            <div className="custom-control custom-checkbox">
+              <input className="custom-control-input" type="checkbox" id="dark_mode" name="dark_mode" checked={this.state.dark_mode} onChange={this.handleCheck} />
+              <label className="custom-control-label" htmlFor="dark_mode"><span>{l10n.map.general_dark_mode}</span></label>
             </div>
           </div>
           <AppOptions.Consumer>

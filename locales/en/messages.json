@@ -555,6 +555,10 @@
     "description": "Yes form button.",
     "message": "Yes"
   },
+  "general_dark_mode": {
+    "description": "Label for checkbox to enable dark mode.",
+    "message": "Enable dark mode"
+  },
   "general_default_key_always": {
     "description": "Label for default private key option.",
     "message": "Always add my default key to the list of recipients. (This allows you to decrypt sent mails)"

@@ -110,7 +110,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <SecurityBG port={port}>
+      <SecurityBG port={port} dark={this.state.prefs ? this.state.prefs : {}}>
         <Route exact path="/" render={() => <Redirect to="/keyring" />} />
         <Route exact path="/encryption" render={() => <Redirect to="/encryption/file-encrypt" />} />
         <Route exact path="/settings" render={() => <Redirect to="/settings/general" />} />
