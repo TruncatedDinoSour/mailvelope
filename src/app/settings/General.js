@@ -22,7 +22,9 @@ l10n.register([
   'general_openpgp_preferences',
   'general_prefer_gnupg_note',
   'keygrid_default_key',
-  'settings_general'
+  'settings_general',
+  'general_theme_preferences',
+  'general_dark_mode',
 ]);
 
 export default class General extends React.Component {
@@ -33,7 +35,8 @@ export default class General extends React.Component {
       auto_sign_msg: false,
       prefer_gnupg: false,
       modified: false,
-      nativeMessaging: true
+      nativeMessaging: true,
+      dark_mode: false
     };
     this.handleCheck = this.handleCheck.bind(this);
     this.handleSave = this.handleSave.bind(this);
@@ -89,6 +92,14 @@ export default class General extends React.Component {
         <h2 className="mb-4">{l10n.map.settings_general}</h2>
         <form>
           <div className="form-group mb-4">
+            <h3>{l10n.map.general_theme_preferences}</h3>
+            <div className="custom-control custom-checkbox">
+              <input className="custom-control-input" type="checkbox" id="dark_mode" name="dark_mode" checked={this.state.dark_mode} onChange={this.handleCheck} />
+              <label className="custom-control-label" htmlFor="dark_mode"><span>{l10n.map.general_dark_mode}</span></label>
+            </div>
+          </div>
+
+          <div className="form-group mb-4">
             <h3>{l10n.map.keygrid_default_key}</h3>
             <div className="custom-control custom-checkbox">
               <input className="custom-control-input" type="checkbox" id="auto_add_primary" name="auto_add_primary" checked={this.state.auto_add_primary} onChange={this.handleCheck} />
@@ -99,6 +110,7 @@ export default class General extends React.Component {
               <label className="custom-control-label" htmlFor="auto_sign_msg"><span>{l10n.map.general_default_key_auto_sign}</span></label>
             </div>
           </div>
+
           <AppOptions.Consumer>
             {({gnupg}) => (
               <div className="form-group mb-4">

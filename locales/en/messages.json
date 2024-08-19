@@ -619,6 +619,14 @@
     "description": "Yes form button.",
     "message": "Yes"
   },
+  "general_theme_preferences": {
+    "description": "Title for theme preferences header.",
+    "message": "Theme Preferences"
+  },
+  "general_dark_mode": {
+    "description": "Label for dark theme checkbox.",
+    "message": "Use dark mode."
+  },
   "general_default_key_always": {
     "description": "Label for default private key option.",
     "message": "Always add my default key to the list of recipients. (This allows you to decrypt sent mails)"
