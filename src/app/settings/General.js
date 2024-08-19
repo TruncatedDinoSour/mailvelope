@@ -54,6 +54,7 @@ export default class General extends React.Component {
       auto_add_primary: general.auto_add_primary,
       auto_sign_msg: general.auto_sign_msg,
       prefer_gnupg: general.prefer_gnupg,
+      dark_mode: general.dark_mode,
       modified: false
     });
   }
@@ -67,7 +68,8 @@ export default class General extends React.Component {
       general: {
         auto_add_primary: this.state.auto_add_primary,
         auto_sign_msg: this.state.auto_sign_msg,
-        prefer_gnupg: this.state.prefer_gnupg
+        prefer_gnupg: this.state.prefer_gnupg,
+        dark_mode: this.state.dark_mode
       }
     };
     await port.send('set-prefs', {prefs: update});
